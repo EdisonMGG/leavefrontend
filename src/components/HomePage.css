@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    background-color: #f0f4f7;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.homepage-container {
+    padding: 40px 0;
+}
+
+.welcome-banner {
+    background-color: #4a90e2 !important;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.content-box {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+/* Buttons Section */
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.custom-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary.custom-button {
+    background-color: #4a90e2;
+    border: none;
+}
+
+.btn-primary.custom-button:hover {
+    background-color: #357ab8;
+}
+
+.btn-danger.custom-button {
+    background-color: #e94e77;
+    border: none;
+}
+
+.btn-danger.custom-button:hover {
+    background-color: #d43f67;
+}
+
+/* Signup Section */
+.signup-section {
+    margin-top: 30px;
+}
+
+.signup-link h4 {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-link h4:hover {
+    color: #357ab8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-button {
+        font-size: 1rem;
+    }
+
+    .welcome-banner h3 {
+        font-size: 1.5rem;
+    }
+
+    .signup-section h3 {
+        font-size: 1.2rem;
+    }
+}

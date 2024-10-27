@@ -1,0 +1,73 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.college-name {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-button-container {
+    margin-top: 20px;
+}
+
+.login-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+
+
+.college-name {
+    font-size: 3rem;
+    color: #fff; /* White text for better contrast */
+    margin-bottom: 20px;
+}
+
+.login-button-container {
+    margin-top: 20px;
+}
+
+.login-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heading-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px 50px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.college-name {
+    font-family: 'Poppins', sans-serif; /* Stylish Google Font */
+    font-size: 48px; /* Larger font size */
+    font-weight: bold;
+    color: #2c3e50; /* Dark color for contrast */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Slight shadow for emphasis */
+}
+
+.login-button-container {
+    margin-top: 20px;
+}
+
+.login-button {
+    font-size: 20px;
+}

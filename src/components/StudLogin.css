@@ -1,0 +1,80 @@
+/* StudLogin.css */
+.login-container {
+    padding: 50px;
+    background: linear-gradient(to bottom, #f8f9fa, #e0e0e0);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #c44444;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-control {
+    height: 45px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: #161a1f;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #23282c;
+}
+
+.text-center {
+    margin-top: 20px;
+}
+
+.alert-primary {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
