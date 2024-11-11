@@ -1,12 +1,14 @@
 import React, { useState } from 'react'; 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // For navigation after logout
-import './AddLeave.css'; // Custom CSS file
+import { useNavigate } from 'react-router-dom'; 
+import './AddLeave.css'; 
 
 const AddLeave = () => {
     const [data, setData] = useState({
         name: "",
         batch: "",
+        yearOfAdmission: "",
+        semester: "",    // New semester field
         rollno: "",
         Sdate: "",
         Edate: "",
@@ -15,7 +17,7 @@ const AddLeave = () => {
         file: null
     });
 
-    const navigate = useNavigate(); // To handle redirection
+    const navigate = useNavigate(); 
 
     const inputHandler = (event) => {
         setData({ ...data, [event.target.name]: event.target.value });
@@ -26,7 +28,7 @@ const AddLeave = () => {
     };
 
     const readValue = () => {
-        if (!data.name || !data.batch || !data.rollno || !data.Sdate || !data.Edate || !data.reasonforleave) {
+        if (!data.name || !data.batch || !data.yearOfAdmission || !data.semester || !data.rollno || !data.Sdate || !data.Edate || !data.reasonforleave) {
             alert("Please fill in all required fields.");
             return;
         }
@@ -34,6 +36,8 @@ const AddLeave = () => {
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("batch", data.batch);
+        formData.append("yearOfAdmission", data.yearOfAdmission);
+        formData.append("semester", data.semester);
         formData.append("rollno", data.rollno);
         formData.append("Sdate", data.Sdate);
         formData.append("Edate", data.Edate);
@@ -57,38 +61,30 @@ const AddLeave = () => {
         });
     };
 
-    // Logout function
     const logout = () => {
         localStorage.removeItem("userSession");
         alert("Logged out successfully!");
         navigate('/StudLogin');
     };
 
-    // Navigation functions
     const viewRejectedLeaves = () => {
         navigate('/RejectedLeaves');
     };
 
     const viewApprovedLeaves = () => {
-        navigate('/ApprovedLeaves');
+        navigate('/ApprovedStud');
     };
 
     const viewPendingLeaves = () => {
         navigate('/PendingLeaves');
     };
 
-    const viewAllLeaves = () => {
-        navigate('/AllLeaves');
-    };
-
     return (
         <div className="leave-form-container">
-            {/* Navbar for navigating between leave views */}
             <div className="navbar">
                 <button className="btn btn-warning" onClick={viewRejectedLeaves}>Rejected Leaves</button>
                 <button className="btn btn-success" onClick={viewApprovedLeaves}>Approved Leaves</button>
                 <button className="btn btn-primary" onClick={viewPendingLeaves}>Pending Leaves</button>
-                <button className="btn btn-info" onClick={viewAllLeaves}>All Leaves</button>
                 <button className="btn btn-danger float-end" onClick={logout}>Logout</button>
             </div>
 
@@ -98,12 +94,13 @@ const AddLeave = () => {
 
             <div className="form-box">
                 <div className="row g-4">
-                    {/* Form Inputs */}
                     <div className="col col-12 col-sm-6">
                         <label htmlFor="name" className="form-label">Enter Your Name</label>
                         <input type="text" className="form-control" name="name" value={data.name} onChange={inputHandler} />
                     </div>
-                    <div className="col col-12 col-sm-6">
+                    
+                    {/* Batch, Year of Admission, and Semester row */}
+                    <div className="col col-12 col-sm-3">
                         <label htmlFor="batch" className="form-label">Enter Your Batch</label>
                         <select name="batch" value={data.batch} onChange={inputHandler} className="form-control">
                             <option value="" disabled>Select a batch</option>
@@ -111,6 +108,29 @@ const AddLeave = () => {
                             <option>B</option>
                         </select>
                     </div>
+                    <div className="col col-12 col-sm-3">
+                        <label htmlFor="yearOfAdmission" className="form-label">Year of Admission</label>
+                        <select name="yearOfAdmission" value={data.yearOfAdmission} onChange={inputHandler} className="form-control">
+                            <option value="" disabled>Select year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div className="col col-12 col-sm-3">
+                        <label htmlFor="semester" className="form-label">Semester</label>
+                        <select name="semester" value={data.semester} onChange={inputHandler} className="form-control">
+                            <option value="" disabled>Select semester</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    
                     <div className="col col-12 col-sm-6">
                         <label htmlFor="Sdate" className="form-label">Starting Date Of Leave</label>
                         <input type="date" name="Sdate" value={data.Sdate} onChange={inputHandler} className="form-control" />

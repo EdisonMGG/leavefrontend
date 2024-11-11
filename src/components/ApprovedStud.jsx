@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
-const RejectedLeaves = () => {
+const ApprovedStud = () => {
     const [rejectedLeaves, setRejectedLeaves] = useState([]);
     const student_rollnum = sessionStorage.getItem('student_rollnum'); // Get roll number from session storage
 
@@ -9,7 +9,7 @@ const RejectedLeaves = () => {
         if (student_rollnum) {
             // Fetch rejected leaves for the specific student from the backend
             console.log(student_rollnum);
-            axios.get(`http://localhost:8080/getrejectedleaves/${student_rollnum}`)  // Pass userid in the URL
+            axios.get(`http://localhost:8080/getapprovedleaves/${student_rollnum}`)  // Pass userid in the URL
                 .then(response => {
                     setRejectedLeaves(response.data);  // Assuming response.data contains the array of rejected leaves
                 })
@@ -31,7 +31,7 @@ const RejectedLeaves = () => {
                 textAlign: 'center',         // Center text
                 marginBottom: '20px'         // Space below the box
             }}>
-                <h3>Rejected Leave Requests</h3>
+                <h3>Approved Leave Requests</h3>
             </div>
             <div className="table-responsive">
                 <table className="table table-bordered table-striped">
@@ -73,4 +73,4 @@ const RejectedLeaves = () => {
     );
 };
 
-export default RejectedLeaves;
+export default ApprovedStud

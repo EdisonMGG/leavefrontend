@@ -15,6 +15,7 @@ import ViewFaculty from './components/ViewFaculty';
 import RejectedLeaves from './components/RejectedLeaves';
 import ApprovedRejectedLeaves from './components/ApprovedRejectedLeaves';
 import ApprovedLeaves from './components/ApprovedLeaves';
+import ApprovedStud from './components/ApprovedStud';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
       <Route path="/rejectedleaves" element={<RejectedLeaves />} />
       <Route path='/approvedrejectedleaves' element={<ApprovedRejectedLeaves/>} />
       <Route path="/viewApprovedLeaves" element={<ApprovedLeaves/>} />
+      <Route path="/approvedstud" element={<ApprovedStud/>} />
+      
 
     </Routes>
     </BrowserRouter>

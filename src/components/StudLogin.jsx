@@ -7,7 +7,8 @@ const StudLogin = () => {
     let navigate = useNavigate();
     const [data, setData] = useState({
         student_username: "",
-        student_password: ""
+        student_password: "",
+       
     });
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -32,6 +33,8 @@ const StudLogin = () => {
             .then((response) => {
                 setLoading(false);
                 if (response.data.status === "success") {
+                    // Store the roll number in sessionStorage
+                    sessionStorage.setItem("student_rollnum", response.data.student_rollnum);
                     navigate("/studaddleave");
                 } else if (response.data.status === "User Not Found") {
                     setErrorMessage("Username Does Not Exist");
@@ -61,6 +64,7 @@ const StudLogin = () => {
                         <label htmlFor="student_password" className="form-label">Enter your Password</label>
                         <input type="password" name="student_password" className="form-control" value={data.student_password} onChange={inputHandler} placeholder="Password" />
                     </div>
+                    
                     <div className="form-group text-center">
                         <button className="btn btn-success login-btn" onClick={readValue} disabled={loading}>
                             {loading ? "Logging in..." : "Login"}

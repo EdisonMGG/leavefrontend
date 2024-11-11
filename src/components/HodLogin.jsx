@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './HodLogin.css';  // Importing the CSS file
+import './HodLogin.css';  
 
 const HodLogin = () => {
     let navigate = useNavigate();
@@ -45,7 +45,7 @@ const HodLogin = () => {
             <div className="login-card">
                 <div className="login-card-body">
                     <div className="form-group">
-                        <label htmlFor="HOD_username">Enter your Email</label>
+                        <label htmlFor="HOD_username">Enter UserName</label>
                         <input
                             type="text"
                             className="form-control"
@@ -56,7 +56,7 @@ const HodLogin = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="HOD_Password">Enter your Password</label>
+                        <label htmlFor="HOD_Password">Enter Password</label>
                         <input
                             type="password"
                             name="HOD_Password"
